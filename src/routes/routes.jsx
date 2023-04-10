@@ -20,8 +20,26 @@ export default function AppRoutes() {
         <Routes>
           <Route
             exact
-            path='/main'
+            path='/'
             element={<Main />}
+          />
+          <Route
+            exact
+            path="/auth/passowrd"
+            element={
+              <div>
+                Password reset
+              </div>
+            }
+          />
+          <Route
+            exact
+            path="/main"
+            element={
+              <div>
+                Main
+              </div>
+            }
           />
           {/* <Route path='*'
             element={<NotFound />}>

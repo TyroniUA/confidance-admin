@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import infoIcon from "../../assets/images/infoIcon.svg";
-import selector from "../../assets/images/selector.svg";
+import infoIcon from "../assets/images/infoIcon.svg";
+import selector from "../assets/images/selector.svg";
 
 export default function Input({ label, type, name, onChange, error, value, min, classname, inputClassName,
   placeholder, valueOfInput, checked, forceLabelClass, info, infoMessage, isMobile = false, disabled = false }) {
