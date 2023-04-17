@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap");
+@import "./components.scss";
+
+:root {
+  box-sizing: border-box;
+  --black: #1d1d1d;
+  --orange: #fb6b3a;
+  --orange-action: #ff4404;
+  --text-grey: #afafaf;
+  --red-pale: #c57f7f;
+  --red: #c00606;
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+}

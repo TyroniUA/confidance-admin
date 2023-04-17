@@ -3,6 +3,7 @@ import Input from "../components/input";
 import { auth, db } from '../firebase';
 import { store, EventTypes, ErrorTypes } from "../store/index";
 import { useNavigate } from "react-router-dom";
+import confiLogo from "../assets/images/confiLogo.png"
 import { getDoc, getDocs, setDoc, doc as fbDoc, collection, query, where } from "firebase/firestore";
 import {
   createUserWithEmailAndPassword, sendPasswordResetEmail,
@@ -146,11 +147,19 @@ export default function Main() {
   };
 
   return (
-    <div>
-      <div>Please provide your email</div>
+    <div
+      className='box'
+    >
+      <img
+        src={confiLogo}
+        height="80"
+        width="80"
+      />
+      <h2>
+        Welcome to ConfiDance!
+      </h2>
       <Input
-        label="email"
-        placeholder={"Please provide your email"}
+        placeholder={"Email address"}
         type="text"
         value={state.email}
         onChange={onChange}
@@ -163,11 +172,13 @@ export default function Main() {
         : null
       }
       <button
-        onClick={!showFullForm ?
-          () =>
-            checkEmailExistance()
-          :
-          () => onLogin()
+        className='button button-action'
+        onClick={
+          !showFullForm ?
+            () =>
+              checkEmailExistance()
+            :
+            () => onLogin()
         }
       >
         {!showFullForm ? "Proceed" : "Login"}

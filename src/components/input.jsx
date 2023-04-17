@@ -42,7 +42,7 @@ export default function Input({ label, type, name, onChange, error, value, min, 
 
   return (
     <>
-      <div className={`${defineClass()} ${classname ? classname : ""} input-basic`}>
+      <div className={`${defineClass()}`}>
         <label
           htmlFor={name}
           className={`input-label ${forceLabelClass ? forceLabelClass : ""}`} >
@@ -97,7 +97,7 @@ export default function Input({ label, type, name, onChange, error, value, min, 
               id={name}
               onChange={onChange}
               value={value}
-              className={inputClassName || "input-body"}
+              className={inputClassName}
               checked={checked}
               placeholder={placeholder}
               min={min}

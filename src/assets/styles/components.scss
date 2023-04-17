@@ -1,0 +1,35 @@
+.box {
+  background: var(--black);
+  border-radius: 50px;
+  padding: 30px;
+  font: 400 18px Montserrat;
+}
+
+@mixin input {
+  input {
+    border-radius: 20px;
+    border: 1px solid var(--text-grey);
+    padding: 18px 16px;
+    height: 55px;
+    background: var(--black);
+    width: 100%;
+  }
+}
+
+@mixin button {
+  width: 100%;
+  height: 56px;
+  font: 600 17px Montserrat;
+  padding: 16px auto;
+  text-align: center;
+}
+.input {
+  @include input;
+}
+
+.button {
+  @include button;
+  &-action {
+    background: var(--orange-action);
+  }
+}
