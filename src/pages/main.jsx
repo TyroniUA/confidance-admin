@@ -46,9 +46,8 @@ export default function Main() {
     })
     const querySnapshot = await getDocs(query(collection(db, "users"), where("email", "==", state.email)));
     if (querySnapshot.docs.length === 0) {
-      console.error('No such email');
       setErrorState({
-        error: "User was not found with this emal"
+        error: "User was not found with this email"
       })
       dispatch({
         type: EventTypes.NEW_NOTIFICATION,
@@ -69,7 +68,6 @@ export default function Main() {
         <Input
           type='password'
           placeholder='Password'
-          label={"Password"}
           name='password'
           onChange={onChange}
           value={state.password}
@@ -105,7 +103,7 @@ export default function Main() {
   const dispatchError = (error) => {
     if (error.code === "auth/user-not-found") {
       setErrorState({
-        error: "User was not found with this emal"
+        error: "User was not found with this email"
       })
       return;
     }
