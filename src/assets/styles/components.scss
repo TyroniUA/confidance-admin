@@ -38,10 +38,12 @@
   cursor: pointer;
   transition: border-color 0.25s;
   color: white;
+  transition: 0.2s;
   margin-top: 15px;
 
   &:hover {
-    border-color: #646cff;
+    transform: scale(1.02);
+    transition: 0.2s;
   }
 
   &:focus,
@@ -68,4 +70,45 @@
   font-weight: 500;
   margin-top: 20px;
   display: inline-block;
+}
+.avatar {
+  border-radius: 16px;
+}
+.user {
+  &-header {
+    span {
+      margin-left: 20px;
+      font: 700 20px Roboto;
+    }
+  }
+  span {
+    margin-left: 20px;
+  }
+}
+
+.divider {
+  border-bottom: 1px solid var(--divider);
+  width: 100%;
+  margin: 10px auto;
+  height: 1px;
+}
+
+.flex {
+  display: flex;
+  &-align-items {
+    align-items: center;
+  }
+  &-column {
+    flex-direction: column;
+  }
+  &-start {
+    justify-content: flex-start;
+  }
+}
+.optWImage {
+  width: 100%;
+  margin: 5px auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }

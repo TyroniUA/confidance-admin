@@ -1,5 +1,6 @@
 import React from 'react';
 import { signOut } from "firebase/auth";
+import { auth } from '../firebase';
 import OptionWithImage from './optionWithImage';
 import noAvatar from "../assets/images/noAvatar.png";
 import myVideos from "../assets/images/myVideos.png";
@@ -9,12 +10,14 @@ export default function UserHeader({ avatar, userName, userId }) {
 
   const listVideos = () => {
     console.log("list")
+
   }
 
   return (
-    <div className="user">
-      <div className="userHeader">
+    <div className="user box">
+      <div className="flex flex-align-items user-header">
         <img
+          className='avatar'
           src={avatar ? avatar : noAvatar}
           width="50"
           height="50"
@@ -26,20 +29,16 @@ export default function UserHeader({ avatar, userName, userId }) {
       </div>
       <div className="divider"></div>
       <div className="userLogic">
-        <div className="flex flex-column">
-          <OptionWithImage
-            image={myVideos}
-            title="My Videos"
-            callBack={listVideos}
-          />
-          <OptionWithImage
-            image={logout}
-            title="Log Out"
-            callBack={() => {
-              signOut()
-            }}
-          />
-        </div>
+        <OptionWithImage
+          image={myVideos}
+          title="My Videos"
+          callBack={listVideos}
+        />
+        <OptionWithImage
+          image={logout}
+          title="Log Out"
+          callBack={() => { signOut(auth) }}
+        />
       </div>
     </div>
   )

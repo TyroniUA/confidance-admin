@@ -1,7 +1,9 @@
 import { createContext, useReducer } from "react";
+import EventTypes from "./eventTypes";
 
 const initialState = {
-  start: false
+  start: false,
+  user: null
 }
 
 const store = createContext(initialState);
@@ -30,6 +32,11 @@ const StateProvider = ({ children }) => {
           ...state,
           notificationList: action.payload
         };
+      case EventTypes.SET_USER:
+        return {
+          ...state,
+          user: action.payload
+        }
       default:
         return state
     }

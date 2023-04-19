@@ -1,10 +1,17 @@
-import React from 'react'
-import UserHeader from '../components/userHeader'
-export default function home() {
+import React, { useEffect, useState, useContext } from 'react'
+import UserHeader from '../components/userHeader';
+import { store } from '../store';
+
+export default function Home() {
+
+  const { state, dispatch } = useContext(store);
+  const { user } = state;
+  console.log(user)
   return (
-    <div>home
+    <div>
       <UserHeader
-        userName="John Doe"
+        userName={user?.displayName}
+        avatar={user?.photoURL}
       />
 
     </div>

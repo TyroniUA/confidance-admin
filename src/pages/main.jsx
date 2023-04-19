@@ -91,7 +91,11 @@ export default function Main() {
     try {
       const result = await signInWithEmailAndPassword(auth, state.email, state.password);
       if (result) {
-        navigate("/main")
+        dispatch({
+          type: EventTypes.SET_USER,
+          payload: result.user
+        })
+        navigate("/home")
       }
 
     } catch (error) {
