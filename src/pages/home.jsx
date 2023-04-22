@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import UserHeader from '../components/userHeader';
 import { store } from '../store';
-
+import Upload from '../components/upload';
 export default function Home() {
 
   const { state, dispatch } = useContext(store);
@@ -13,7 +13,7 @@ export default function Home() {
         userName={user?.displayName}
         avatar={user?.photoURL}
       />
-
+      <Upload />
     </div>
   )
 }
