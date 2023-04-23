@@ -18,7 +18,7 @@
     color: var(--text-grey);
     font-size: 16px;
     font-weight: 400;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
 }
 
@@ -54,6 +54,13 @@
 
 .input {
   @include input;
+  &-error {
+    margin: 0 auto 20px auto;
+    color: red;
+    display: block;
+    font-size: 12px;
+  }
+  margin-bottom: 15px;
 }
 
 .button {
@@ -62,6 +69,12 @@
   &-action {
     background: var(--orange-action);
   }
+}
+
+.dropzone {
+  border: 1px dashed var(--divider);
+  border-radius: 16px;
+  padding: 20px;
 }
 
 .error {
@@ -118,4 +131,11 @@
     cursor: pointer;
     color: var(--orange-action);
   }
+}
+
+textarea {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--divider);
 }

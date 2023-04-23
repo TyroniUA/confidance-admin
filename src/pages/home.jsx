@@ -13,6 +13,9 @@ export default function Home() {
         userName={user?.displayName}
         avatar={user?.photoURL}
       />
+      <div
+        style={{ marginBottom: "50px" }}
+      />
       <Upload />
     </div>
   )

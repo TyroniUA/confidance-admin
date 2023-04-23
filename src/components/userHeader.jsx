@@ -3,8 +3,8 @@ import { signOut } from "firebase/auth";
 import { auth } from '../firebase';
 import OptionWithImage from './optionWithImage';
 import noAvatar from "../assets/images/noAvatar.png";
-import myVideos from "../assets/images/myVideos.png";
-import logout from "../assets/images/logout.png";
+import myVideos from "../assets/images/myVideos.svg";
+import logout from "../assets/images/logout.svg";
 
 export default function UserHeader({ avatar, userName, userId }) {
 

@@ -32,7 +32,7 @@ export default function Input({ label, type, name, onChange, error, value, min, 
       case "radio":
         return "input-flex";
       case "number":
-        return "input-number";
+        return "input";
       case "file":
         return "input-file";
       default:
