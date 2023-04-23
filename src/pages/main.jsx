@@ -77,7 +77,7 @@ export default function Main() {
           <span
             className='login-forgot'
             onClick={() => {
-              navigate("/auth/password")
+              navigate("/login/password-reset")
             }}>
             Forgot your password
           </span>

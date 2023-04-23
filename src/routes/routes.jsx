@@ -4,8 +4,23 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Main from "../pages/main";
 import Home from "../pages/home";
-// import NotFound from "../pages/notFound.js";
+import NotFound from "../pages/notFound.jsx";
+import PasswordReset from "../components/passwordReset";
 
+const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        isAuthenticated ? (
+          <Component {...props} />
+        ) : (
+          <Navigate to={{ pathname: '/login', state: { from: props.location } }} />
+        )
+      }
+    />
+  );
+};
 export default function AppRoutes() {
   return (
     <>
@@ -20,15 +35,20 @@ export default function AppRoutes() {
           <Route
             exact
             path='/'
+            element={
+              <Navigate replace to="/login" />
+            }
+          />
+          <Route
+            exact
+            path='/login'
             element={<Main />}
           />
           <Route
             exact
-            path="/auth/passowrd"
+            path="/login/password-reset"
             element={
-              <div>
-                Password reset
-              </div>
+              <PasswordReset></PasswordReset>
             }
           />
           <Route
@@ -38,9 +58,9 @@ export default function AppRoutes() {
               <Home />
             }
           />
-          {/* <Route path='*'
+          <Route path='*'
             element={<NotFound />}>
-          </Route> */}
+          </Route>
         </Routes>
       </Suspense>
     </>
